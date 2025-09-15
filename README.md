@@ -58,22 +58,15 @@ It demonstrates:
 1. Clone this repository:
    ```bash
    git clone https://github.com/your-username/ChargeNow-PowerBankRental.git
-Navigate to the project folder.
+2. Navigate to the project folder.
+3. Compile the Java program:
+   ```bash
+   javac Main.java
+4. Run the program:
+   ```bash
+   java Main
 
-Compile the Java program:
-
-bash
-Salin kode
-javac Main.java
-Run the program:
-
-bash
-Salin kode
-java Main
-
-📖 Example Flow
-text
-Salin kode
+## 📖 Example Flow
 ===== Welcome to ChargeNow: Power Bank Rental Service =====
 Please select your role:
 1. User

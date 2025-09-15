@@ -1,5 +1,7 @@
 # ChargeNow: Layanan Peminjaman Power Bank
 
+# ChargeNow: Simple Power Bank Rental System
+
 ## 📌 Overview
 ChargeNow is a **simple terminal-based power bank rental system** built using **Java**.  
 This project was created to simulate the process of renting and returning power banks, both from the **user side** and the **admin side**.  
@@ -56,3 +58,36 @@ It demonstrates:
 1. Clone this repository:
    ```bash
    git clone https://github.com/your-username/ChargeNow-PowerBankRental.git
+Navigate to the project folder.
+
+Compile the Java program:
+
+bash
+Salin kode
+javac Main.java
+Run the program:
+
+bash
+Salin kode
+java Main
+
+📖 Example Flow
+text
+Salin kode
+===== Welcome to ChargeNow: Power Bank Rental Service =====
+Please select your role:
+1. User
+2. Admin
+3. Exit
+Choice: 1
+
+===== User Menu =====
+1. Borrow Power Bank
+2. Exit
+Choice: 1
+
+## 🔮 Future Improvements
+1. Store data permanently (e.g., using files or a database).
+2. Add authentication for admin login.
+3. Implement a more flexible penalty system.
+4. Build a GUI version for better usability.

@@ -73,11 +73,13 @@ Please select your role:
 1. User
 2. Admin
 3. Exit
+
 Choice: 1
 
 ===== User Menu =====
 1. Borrow Power Bank
 2. Exit
+
 Choice: 1
 
 ---

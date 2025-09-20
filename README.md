@@ -55,7 +55,7 @@ It demonstrates:
 ## 📂 How to Run
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/ChargeNow-PowerBankRental.git
+   git clone https://github.com/your-username/ChargeNow_LayananPeminjamanPowerBank.git
 2. Navigate to the project folder.
 3. Compile the Java program:
    ```bash

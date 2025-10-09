@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 class PowerBank {
     String kode;
     boolean dipinjam;
-    int userIndex; // index peminjam in users list, -1 if none
+    int userIndex;
 
     PowerBank(String kode) {
         this.kode = kode;
@@ -27,10 +27,9 @@ class User {
     String nim;
     String prodi;
     String instansi;
-    List<Integer> borrowedPB = new ArrayList<>(); // indexes of PB currently borrowed
+    List<Integer> borrowedPB = new ArrayList<>();
     int penalti = 0;
-    boolean active = false; // true if has any outstanding borrowed PB
-
+    boolean active = false;
     User(String name, String nim, String prodi, String instansi) {
         this.name = name;
         this.nim = nim;
@@ -46,9 +45,9 @@ class Transaction {
     String instansi;
     String pbCode;
     Date borrowTime;
-    Date returnTime; // null if not yet returned
-    boolean late; // true if returned late
-    int penalty; // 0 if none
+    Date returnTime; 
+    boolean late;
+    int penalty;
 
     Transaction(String userName, String userNIM, String prodi, String instansi, String pbCode, Date borrowTime) {
         this.userName = userName;
@@ -65,10 +64,9 @@ class Transaction {
 
 public class ChargeNow {
     static final int MAX_USERS = 100;
-    static final int NUM_PB = 5; // PB001 .. PB005
+    static final int NUM_PB = 5;
     static final int MAX_PER_USER = 5;
-    static final int DUE_HOURS = 24; // due duration in hours (change if needed)
-
+    static final int DUE_HOURS = 24; 
     static List<User> users = new ArrayList<>();
     static List<PowerBank> pbs = new ArrayList<>();
     static List<Transaction> history = new ArrayList<>();
@@ -129,7 +127,6 @@ public class ChargeNow {
             user = new User(nama, nim, prodi, instansi);
             users.add(user);
         } else {
-            // update profile fields in case changed
             user.name = nama;
             user.prodi = prodi;
             user.instansi = instansi;
@@ -178,7 +175,6 @@ public class ChargeNow {
             return;
         }
 
-        // record borrowing
         chosen.dipinjam = true;
         chosen.userIndex = users.indexOf(user);
         user.borrowedPB.add(pilih);
@@ -224,7 +220,7 @@ public class ChargeNow {
         System.out.println("\n===== Daftar Peminjam Aktif =====");
         boolean ada = false;
         for (User u : users) {
-            if (!u.borrowedPB.isEmpty()) { // cek langsung borrowedPB
+            if (!u.borrowedPB.isEmpty()) {
                 ada = true;
                 System.out.println("---------------------------------");
                 System.out.println("Nama     : " + u.name);
@@ -246,7 +242,6 @@ public class ChargeNow {
     }
 
 
-    // find the transaction for pbCode with null returnTime (open borrow) and return its borrowTime
     public static Date findOpenBorrowTime(String pbCode) {
         for (int i = history.size() - 1; i >= 0; i--) {
             Transaction t = history.get(i);
@@ -300,19 +295,17 @@ public class ChargeNow {
         Date now = new Date();
         openTx.returnTime = now;
 
-        // calculate lateness
         long diffMillis = now.getTime() - openTx.borrowTime.getTime();
         long diffHours = diffMillis / (1000 * 60 * 60);
         boolean late = diffHours > DUE_HOURS;
         openTx.late = late;
 
-        // show details
         System.out.println("Waktu Peminjaman : " + sdf.format(openTx.borrowTime));
         System.out.println("Waktu Pengembalian: " + sdf.format(openTx.returnTime));
         System.out.println("Status           : " + (late ? "Telat" : "Tepat waktu"));
         int penaltyGiven = 0;
         if (late) {
-            // prompt admin for penalty amount
+         
             while (true) {
                 System.out.print("Masukkan jumlah penalti (angka) atau 0 jika tidak memberi penalti: ");
                 String line = sc.nextLine().trim();
@@ -324,7 +317,7 @@ public class ChargeNow {
                 }
             }
             openTx.penalty = penaltyGiven;
-            // add penalty to user record
+
             User u = findUserByNIM(openTx.userNIM);
             if (u != null) {
                 u.penalti += penaltyGiven;
@@ -333,13 +326,13 @@ public class ChargeNow {
             System.out.println("Tidak perlu penalti.");
         }
 
-        // update PB and user
+       
         foundPB.dipinjam = false;
         int userIndex = foundPB.userIndex;
         foundPB.userIndex = -1;
         if (userIndex >= 0 && userIndex < users.size()) {
             User borrower = users.get(userIndex);
-            // remove pbIdx from borrower's borrowedPB list
+            
             Integer boxedIdx = pbIdx;
             borrower.borrowedPB.remove(boxedIdx);
             if (borrower.borrowedPB.isEmpty()) {

@@ -1,9 +1,10 @@
 # ⚡ ChargeNow: Power Bank Rental System
 
-![Java](https://img.shields.io/badge/Language-Java-orange?style=for-the-badge&logo=java)
-![Platform](https://img.shields.io/badge/Platform-Console%2FTerminal-black?style=for-the-badge&logo=terminal)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Active-blue?style=for-the-badge)
+![Timeline](https://img.shields.io/badge/Timeline-Nov_2023-8A2BE2)
+![Java](https://img.shields.io/badge/Language-Java-orange?logo=java)
+![Platform](https://img.shields.io/badge/Platform-Console%2FTerminal-black?logo=terminal)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Active-blue)
 
 > **ChargeNow** is a robust, terminal-based simulation system designed to manage the lifecycle of power bank rentals. Built with **pure Java**, this project demonstrates solid Object-Oriented Programming (OOP) principles and efficient data management without external dependencies.
 

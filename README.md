@@ -2,7 +2,7 @@
 
 ![Timeline](https://img.shields.io/badge/Timeline-Nov_2023-8A2BE2)
 ![Java](https://img.shields.io/badge/Language-Java-orange?logo=java)
-![Platform](https://img.shields.io/badge/Platform-Console%2FTerminal-black?logo=terminal)
+![Platform](https://img.shields.io/badge/Platform-Console%2FTerminal-0f1419?logo=terminal)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Active-blue)
 

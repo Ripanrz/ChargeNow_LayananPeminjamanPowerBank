@@ -6,8 +6,9 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Active-blue)
 
-> **ChargeNow** is a robust, terminal-based simulation system designed to manage the lifecycle of power bank rentals. Built with **pure Java**, this project demonstrates solid Object-Oriented Programming (OOP) principles and efficient data management without external dependencies.
+**ChargeNow** is a robust, terminal-based simulation system designed to manage the lifecycle of power bank rentals. Built with **pure Java**, this project demonstrates solid Object-Oriented Programming (OOP) principles and efficient data management without external dependencies.
 
+> **Development Period:** November 2023
 ---
 
 ## 📑 Table of Contents
@@ -68,10 +69,10 @@ This project is crafted to showcase fundamental software engineering concepts:
 
 ### Steps
 1.  **Clone the Repository**
-    ```bash
-    git clone [https://github.com/your-username/ChargeNow.git](https://github.com/your-username/ChargeNow.git)
-    cd ChargeNow
-    ```
+   ```bash
+   git clone [https://github.com/Ripanrz/ChargeNow_LayananPeminjamanPowerBank.git](https://github.com/Ripanrz/ChargeNow_LayananPeminjamanPowerBank.git)
+   cd ChargeNow_LayananPeminjamanPowerBank
+   ```
 
 2.  **Compile the Source Code**
     ```bash
